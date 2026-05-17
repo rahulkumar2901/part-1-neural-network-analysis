@@ -1,110 +1,17 @@
-# Neural Network Fundamentals and Training Behavior Analysis
+# **Task 6: Final Reflection**
+1. What role do weights and biases play in the model?
 
-## Objective
-The objective of this project is to build and analyze a feed-forward neural network model for customer churn prediction using a structured dataset. The project demonstrates neural network training, forward propagation, backpropagation, loss calculation, and hyperparameter experimentation.
+  Weights and biases are the main learnable parameters of a neural network. Weights determine the importance of input features and control how strongly inputs influence the output. Bias helps shift the activation function and allows the model to fit the data more flexibly. During training, the neural network continuously updates weights and biases using backpropagation and optimization algorithms to reduce prediction error.
 
----
+ # 2. Why is an activation function required?
 
-## Dataset
-The dataset contains customer-related features such as:
-- Region
-- Plan type
-- Contract type
-- Monthly charges
-- Data usage
-- Satisfaction score
-- Payment delays
-- Referral count
-- Churn status
+ Activation functions introduce non-linearity into the neural network. Without activation functions, the neural network would behave like a simple linear model and would not be able to learn complex patterns from the data. Functions like ReLU and ELU help the network learn meaningful relationships between input features and target variables.
 
-Target variable:
-- `churn`  
-  - 0 → Non-churn customer
-  - 1 → Churn customer
+# 3. What happens when learning rate is too high or too low?
 
----
+  The learning rate controls how much the model updates its weights during training. If the learning rate is too high, the model may overshoot the optimal solution and training may become unstable. If the learning rate is too low, training becomes very slow and the model may take a long time to converge. Therefore, selecting an appropriate learning rate is important for stable and efficient learning.
 
-## Tasks Performed
+ # 4. Did your model show signs of underfitting or overfitting?
 
-### 1. Dataset Understanding
-- Dataset exploration
-- Missing value check
-- Statistical summary
-- Target variable distribution analysis
+The model did not show strong signs of overfitting because the training and testing accuracies were very similar. However, the classification report and confusion matrix revealed that the model struggled to correctly identify churn customers due to severe class imbalance in the dataset. This indicates that the main challenge was class imbalance rather than traditional underfitting or overfitting.
 
-### 2. Data Preprocessing
-- Removed identifier column
-- Encoded categorical variables
-- Feature scaling using StandardScaler
-- Train-test splitting
-
-### 3. Neural Network Model Building
-- Built feed-forward neural network using TensorFlow/Keras
-- Used Dense hidden layers
-- ReLU and ELU activation functions
-- Sigmoid output activation for binary classification
-
-### 4. Model Training and Evaluation
-- Trained neural network model
-- Evaluated using:
-  - Accuracy
-  - Loss
-  - Confusion matrix
-  - Classification report
-
-### 5. Hyperparameter Experimentation
-Experiments were performed by changing:
-- Number of hidden layers
-- Number of neurons
-- Activation functions
-- Learning rate
-- Number of epochs
-
-### 6. Final Reflection
-Discussed:
-- Role of weights and biases
-- Importance of activation functions
-- Effect of learning rate
-- Underfitting and overfitting analysis
-
----
-
-## Experiment Summary
-
- Experiment  Description 
----|--|
- Exp 1  Baseline model 
- Exp 2  Two hidden layers 
- Exp 3  ELU activation with more neurons 
- Exp 4  Higher learning rate 
- Exp 5  Increased epochs 
-
----
-
-## Results
-The model achieved high overall accuracy; however, confusion matrix and classification report analysis showed challenges in predicting minority churn cases due to dataset imbalance.
-
----
-
-## Libraries Used
-- pandas
-- numpy
-- matplotlib
-- seaborn
-- scikit-learn
-- tensorflow
-
----
-
-## Project Structure
-
-```text
-part-1-neural-network-analysis/
-│
-├── README.md
-├── notebook.ipynb
-├── requirements.txt
-└── results/
-    ├── model_comparison_table.csv
-    └── evaluation_outputs.png
-```
