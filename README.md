@@ -1,5 +1,5 @@
 # **Task 6: Final Reflection**
-1. What role do weights and biases play in the model?
+#1. What role do weights and biases play in the model?
 
   Weights and biases are the main learnable parameters of a neural network. Weights determine the importance of input features and control how strongly inputs influence the output. Bias helps shift the activation function and allows the model to fit the data more flexibly. During training, the neural network continuously updates weights and biases using backpropagation and optimization algorithms to reduce prediction error.
 
